@@ -49,8 +49,11 @@ jobs:
         working-directory: ios
         run: |
           set -euo pipefail
-          # The runner's python3 already ships Pillow; do not pip install into
-          # the system interpreter (PEP 668 on macOS runners rejects it).
+          # python3 on the runner has no Pillow and its site-packages is
+          # externally managed (PEP 668), so install into a throwaway venv.
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --quiet --disable-pip-version-check pillow
+          export PATH="$RUNNER_TEMP/venv/bin:$PATH"
           python3 -c 'import PIL; print("Pillow", PIL.__version__)'
           sh tools/verify_project.sh
 
