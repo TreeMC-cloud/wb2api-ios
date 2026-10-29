@@ -1,0 +1,14 @@
+# One repository-relative patch path per line, applied in order.
+0001-auth-pool-consistency.patch
+0002-upstream-credential-snapshots.patch
+0003-core-wiring.patch
+0004-scheduler-observation.patch
+0005-regression-tests.patch
+0006-desktop-lifecycle.patch
+0007-desktop-script-window.patch
+0008-relaykit-module.patch
+0009-relaykit-responses-history.patch
+0010-relaykit-claude-history.patch
+0011-relaykit-responses-text-parts.patch
+0012-adapter-raw-response.patch
+0013-relaykit-image-detail.patch

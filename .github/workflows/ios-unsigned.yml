@@ -1,0 +1,130 @@
+name: iOS Unsigned IPA
+
+on:
+  workflow_dispatch:
+    inputs:
+      marketing_version:
+        description: 'CFBundleShortVersionString (e.g. 0.1.0)'
+        required: false
+        default: ''
+      create_release:
+        description: 'Attach the ipa to a GitHub Release'
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ios-unsigned-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build unsigned ipa
+    runs-on: macos-15
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Select Xcode
+        run: |
+          ls /Applications | grep -i '^Xcode' || true
+          sudo xcode-select -s "$(ls -d /Applications/Xcode*.app | sort -V | tail -1)"
+          xcodebuild -version
+
+      - name: Show toolchain
+        run: |
+          xcrun --sdk iphoneos --show-sdk-version
+          xcodebuild -showsdks | sed -n '1,40p'
+
+      - name: Verify project integrity
+        working-directory: ios
+        run: |
+          set -euo pipefail
+          # Pillow ships with the runner's python3; install only if missing.
+          python3 -c 'import PIL' 2>/dev/null || python3 -m pip install --quiet pillow
+          sh tools/verify_project.sh
+
+      - name: Build (no code signing)
+        working-directory: ios
+        env:
+          MARKETING_VERSION: ${{ inputs.marketing_version }}
+        run: |
+          set -euo pipefail
+          EXTRA=""
+          if [ -n "${MARKETING_VERSION}" ]; then
+            EXTRA="MARKETING_VERSION=${MARKETING_VERSION}"
+          fi
+          xcodebuild \
+            -project WB2API.xcodeproj \
+            -scheme WB2API \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$RUNNER_TEMP/dd" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGN_ENTITLEMENTS="" \
+            DEVELOPMENT_TEAM="" \
+            PROVISIONING_PROFILE_SPECIFIER="" \
+            ENABLE_BITCODE=NO \
+            ${EXTRA} \
+            build
+
+      - name: Package ipa
+        id: package
+        env:
+          MARKETING_VERSION: ${{ inputs.marketing_version }}
+        run: |
+          set -euo pipefail
+          APP="$RUNNER_TEMP/dd/Build/Products/Release-iphoneos/WB2API.app"
+          test -d "$APP"
+          VERSION="${MARKETING_VERSION:-$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP/Info.plist")}"
+          NAME="wb2api-ios-unsigned-${VERSION}"
+          rm -rf "$RUNNER_TEMP/Payload" && mkdir -p "$RUNNER_TEMP/Payload"
+          cp -R "$APP" "$RUNNER_TEMP/Payload/"
+          # Sideloading tools (Sideloadly/AltStore) re-sign on install; a strip
+          # of any leftover signature avoids "invalid signature" noise.
+          rm -rf "$RUNNER_TEMP/Payload/WB2API.app/_CodeSignature"
+          ( cd "$RUNNER_TEMP" && zip -qry "${NAME}.ipa" Payload )
+          # A raw .app zip is handy for TrollStore-style installs.
+          ( cd "$RUNNER_TEMP" && zip -qry "${NAME}-app.zip" "Payload/WB2API.app" )
+          echo "name=${NAME}" >> "$GITHUB_OUTPUT"
+          ls -lh "$RUNNER_TEMP/${NAME}.ipa"
+          shasum -a 256 "$RUNNER_TEMP/${NAME}.ipa" | tee "$RUNNER_TEMP/${NAME}.ipa.sha256"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.package.outputs.name }}
+          path: |
+            ${{ runner.temp }}/${{ steps.package.outputs.name }}.ipa
+            ${{ runner.temp }}/${{ steps.package.outputs.name }}.ipa.sha256
+            ${{ runner.temp }}/${{ steps.package.outputs.name }}-app.zip
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Attach to release
+        if: ${{ inputs.create_release }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ios-${{ steps.package.outputs.name }}
+          name: wb2api iOS (unsigned)
+          body: |
+            无签名 ipa，由 CI 构建（Xcode 无证书模式）。
+            安装方式：Sideloadly / AltStore / TrollStore 等自签工具。
+          files: |
+            ${{ runner.temp }}/${{ steps.package.outputs.name }}.ipa
+            ${{ runner.temp }}/${{ steps.package.outputs.name }}.ipa.sha256
+          draft: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

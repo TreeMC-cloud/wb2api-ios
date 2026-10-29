@@ -1,0 +1,28 @@
+services:
+  core:
+    extends:
+      file: docker-compose.yml
+      service: core
+    image: workbuddy2api-core:dev
+    pull_policy: build
+    build:
+      context: .
+      dockerfile: deploy/core.Dockerfile
+      pull: true
+    volumes:
+      - type: bind
+        source: ./deploy/default-config.json
+        target: /app/config.json
+        read_only: true
+        bind:
+          create_host_path: false
+  console:
+    extends:
+      file: docker-compose.yml
+      service: console
+    image: workbuddy2api-console:dev
+    pull_policy: build
+    build:
+      context: .
+      dockerfile: deploy/console.Dockerfile
+      pull: true

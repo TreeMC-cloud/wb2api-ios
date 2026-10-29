@@ -1,0 +1,201 @@
+# Upstream patches
+
+> 注意：上游 Sliverkiss/workbuddy2api 仓库已删除。本仓库自行维护该冻结基线与补丁，
+> `overlay.py update` 不可用；新增能力优先放 `extensions/`，修改既有文件通过补丁。
+
+Baseline: Sliverkiss/workbuddy2api commit
+`c576b489fa22e3c156e960ee6336c4e653a0d95c`. Apply only through
+`python3 scripts/overlay.py prepare --output ABS_NEW_DIRECTORY`; never edit
+`upstream/`. New source and tests live in `extensions/`, not in these patches.
+`series` is the explicit application order: 0001 through 0008.
+For a deliberate upstream candidate, run
+`python3 scripts/overlay.py update --ref COMMIT_OR_TAG`; it keeps the current
+snapshot and lock until the candidate passes `scripts/check.sh` and isolated
+mock acceptance. Review every patch against the resolved commit before
+committing the resulting `upstream/` and `upstream.lock` changes.
+
+| Patch | Purpose and old files changed | Verification after materializing |
+| --- | --- | --- |
+| 0001-auth-pool-consistency | `internal/auth/auth.go`: locked snapshots/save/replace, stale activation guard and persisted pending marker. `internal/pool/{cooldown,entry,pick,state}.go`: observed-credit flag, pending guards for ordinary/model-exempt/cooldown-fallback selection and status. Install stays an extension and persists before publishing while preserving the live Auth identity. | `go test ./internal/auth ./internal/pool ./internal/upstream` and their race tests |
+| 0002-upstream-credential-snapshots | `internal/upstream/{client,global_models,headers,report,trial,travel}.go`: one refresh snapshot including explicit realm, stale-refresh rejection if either token changes, private per-request snapshots, pending chat rejection, cancellation-aware OAuth post-login requests, snapshot retained across billing fallback. `internal/scheduler/{scheduler,travel}.go`: four credential presence reads use snapshots (checkin, keepalive, activity, travel); no scheduler algorithm changes. | `go test ./internal/upstream ./internal/bridge`; `go test -race ./internal/auth ./internal/pool ./internal/upstream ./internal/scheduler ./internal/bridge` |
+| 0003-core-wiring | `cmd/server/main.go`: early initialization before LoadDir, late wrapper after existing dependencies/context, wrapped config-not-found handling through errors.Is; opt-in Scheduled callback captures the local Runner before scheduler.New, then initializes history/Runner before scheduler.Run. `cmd/login/main.go`: reuse OAuth client, strict complete-account validation and pending classification. No admin implementation enters the original public Handler. | `go test ./cmd/server ./cmd/login ./internal/bridge ./internal/oauth`; `go test -race ./internal/taskrun ./internal/scheduler ./internal/bridge ./cmd/server` |
+| 0004-scheduler-observation | `internal/scheduler/{scheduler,travel,school}.go`: optional scheduled callback, Beijing-time scheduling, short-lived per-instance observations and context-bound scripts using private CN snapshots. `scripts/{school_open_day_2026,task_runner}.py`: fixed structured events at existing result branches, preserving activity algorithms and limits. `scripts/task_common.py`: close the existing read-only auth handle. | `go test ./internal/scheduler`, `go test -race ./internal/scheduler`, `python3 -m unittest discover -s scripts -p test_task_events.py -v` |
+| 0005-regression-tests | `internal/server/handler_test.go` and `internal/pool/pool_test.go`: ledger reset time can be omitted when it equals until; accept either representation but retain the one-second timing assertion. `internal/scheduler/school_test.go`: existing fixed-command/dispatch tests use a valid CN pool and context/output-aware fake; empty pools no longer launch a child. Production ledger format is unchanged. | `go test ./internal/server -run TestStatusRateLimitedModelsLedger`, scheduler tests and full suite |
+
+Remove each patch only when the pinned upstream supplies the corresponding
+behavior and the named regression tests pass without that patch. For 0003,
+upstream must provide equivalent early/late integration hooks and shared OAuth
+validation; for 0005, upstream's test must accept its existing omitted reset_at
+representation. Re-evaluate patches individually on an explicit upstream update.
+
+Remove 0004 when upstream supplies equivalent scheduling callbacks, safe account
+snapshots and explicit task results. A script exit code is not a per-account
+success: nonzero exit preserves explicit events, fails accounts without events,
+and returns a fixed process error for the run aggregator. Only explicit reward
+fields are collected. Go TravelClaim cannot distinguish omitted reward from
+zero, so both remain null. Ordinary script output is replaced with a bounded
+omission summary; no process-wide logger is captured. The original auth loader
+must remain read-only (the extension test rejects write access).
+
+Task 2 wiring handoff: `initializeCore(*Config) error` validates opt-in
+`WB2A_BRIDGE_KEY` and creates account/state directories before loading accounts.
+`wrapCore(ctx,cfg,p,up,sch,public,tasks,history,taskError)` uses the same pool/upstream/scheduler; absent
+bridge key returns the identical source-mode public handler. Task 4 extends the
+early hook with persisted keys and Docker opt-in, not a second pool or scheduler.
+Build metadata comes from linker variables `main.upstreamCommit` and
+`main.patchIdentity`; empty source-build values mean unknown.
+
+Task 6 wiring: `coreTaskSchedule(&tasks)` remains nil without Docker/bridge opt-in.
+`newCoreTasks(ctx,cfg,sch)` opens `tasks/runs.json` alongside the pool state and
+binds the same scheduler's catalog/executor to the core lifecycle. Corrupt history
+leaves the opt-in callback installed but skipping execution, and passes TaskError
+to the bridge without stopping the public handler. Task 7 owns HTTP task routes
+and their 503 mapping. Remove this part of 0003 only when upstream provides an
+equivalent durable single-runner hook, including fail-closed scheduled execution.
+
+## 0006-desktop-lifecycle
+
+`cmd/server/main.go` obtains its lifecycle through the extension hook, retains
+SIGINT/SIGTERM handling, and awaits HTTP/task shutdown before returning.
+`WB2A_DESKTOP=true` additionally cancels on parent stdin EOF, read failure, or
+`shutdown\n` (CRLF accepted). Other lines do not execute commands. The launcher
+must pipe stdin, wait at least 5 seconds plus filesystem flush time, then enforce
+its process-group/Windows Job Object cleanup deadline. Plain Docker/source mode
+does not watch stdin.
+
+Task shutdown cancels dispatch, waits within the 5-second shared HTTP/task
+budget, and persists an interrupted record before exiting if a legacy RPC ignores
+cancellation. Late completion cannot replace that interruption. Persistence errors
+are returned and logged; no successful flush is claimed after failure.
+
+The `durablefs` extension publishes already-synced same-directory temporary files:
+Unix keeps link-without-replacement/rename plus directory fsync; Windows uses
+`MoveFileEx` with `MOVEFILE_WRITE_THROUGH` and explicit replacement only for history.
+It never removes the destination before publication or ignores arbitrary errors.
+Windows file permissions inherit the application-data directory ACL; POSIX mode
+bits alone cannot impose an ACL.
+
+Verify with `go test -race ./cmd/server ./internal/taskrun ./internal/durablefs`
+and `GOOS=windows GOARCH=amd64 go build ./cmd/server` in a fresh overlay; actual
+Windows filesystem behavior also requires the native Windows test job. Remove
+0006 only when the base provides equivalent parent lifecycle and bounded durable
+shutdown hooks.
+
+
+## 0007-desktop-script-window
+
+`internal/scheduler/school.go` configures each newly created Python command through
+an OS-specific extension. Only Windows with `WB2A_DESKTOP=true` sets `HideWindow`
+and `CREATE_NO_WINDOW`, preventing scheduled Python tasks from opening console
+windows. The existing context, arguments, standard streams and task lifecycle are
+unchanged. Other platforms and non-desktop modes retain native process defaults.
+
+Verify with `go test -race ./internal/scheduler` in a fresh overlay, and compile
+Windows tests with `GOOS=windows GOARCH=amd64 go test -c ./internal/scheduler`.
+Run `TestDesktopScriptHasNoConsoleWindow` on Windows; cross-compilation alone does
+not verify native window behavior. Remove this patch when the base command
+factory provides the same desktop-only Windows process flags and these tests pass
+without the hook.
+
+## 0008-relaykit-module
+
+`go.mod` requires `github.com/QuantumNous/new-api/relaykit v0.0.0` and replaces
+it with `./third_party/relaykit`; the core baseline is Go 1.26. `go.sum` records
+the pinned module's dependencies. The core module also records the indirect
+dependencies required by the shared protocol transport's public `relayconvert`
+imports, so a fresh overlay supports `go test -mod=readonly ./internal/protocol`.
+The independent RelayKit snapshot keeps its
+original module path and Go 1.25.1 declaration. Its source, tests and dependency
+files are unchanged Git blobs from the commit recorded in
+`extensions/third_party/relaykit/SOURCE.json`, which also lists each original
+file's SHA-256. Root LICENSE, NOTICE and THIRD-PARTY-LICENSES.md from New API
+are preserved alongside the module. No New API host service is included.
+
+Materialize a fresh directory, then run `go -C third_party/relaykit test ./...`,
+`go -C third_party/relaykit vet ./...` and the core tests from that directory.
+The nested module must be checked separately; core `./...` does not include it.
+Docker and desktop resources package the notices and SOURCE.json without
+packaging RelayKit source files. Remove this patch only if core no longer uses
+RelayKit or its base module provides the equivalent pinned local dependency.
+
+## 0009-relaykit-responses-history
+
+The pinned RelayKit Responses request mapper treats a plaintext `reasoning`
+input item as an empty user message. Map its `summary_text` blocks to Chat
+`reasoning_content`, and attach the following assistant text and tool calls to
+that turn. Reject opaque/encrypted reasoning fields instead of dropping them.
+The shared protocol validator checks the plaintext shape and reports the exact
+input field path before calling the existing Handler. No reasoning signature,
+response persistence, or separate tool state is introduced.
+
+Regression tests in the patch cover plaintext summary/text/function/result
+history, reasoning followed directly by a tool call, and tools/text arriving
+before reasoning within the same assistant turn. Verify the nested
+RelayKit module with `go test ./...` and `go vet ./...` in a fresh overlay;
+also run core `go test ./internal/responses ./internal/protocol ./internal/server
+./cmd/server`. Remove the patch only when a replacement pinned snapshot maps
+the same plaintext history without losing text, reasoning, or tool association
+and these regressions pass without it.
+
+## 0010-relaykit-claude-history
+
+The pinned RelayKit Claude-to-Chat mapper omits assistant text when the same
+message contains tool calls, and discards plaintext thinking history. Preserve
+both content and tool calls on the assistant turn; map unsigned plaintext
+thinking to `reasoning_content`, including a thinking-only assistant turn.
+Tool-result IDs and names continue to use the existing mapper. Public APIs,
+module path, and the original vendored source bytes are unchanged.
+
+The host validates nested Claude shapes and rejects signed/redacted history or
+meaningful fields the pinned Chat mapper cannot carry, with a field path before
+calling the Handler. It does not fabricate signatures or expand tool execution.
+Regression tests in the patch reproduce thinking-only and mixed text/thinking/
+tool/result history. Verify the nested library with `go test -mod=readonly ./...`
+and `go vet -mod=readonly ./...` in a fresh overlay, then test and race-test core
+`./internal/anthropic ./internal/protocol ./internal/bridge ./cmd/server`.
+Remove this patch only when a replacement pinned snapshot preserves these
+histories and the regressions pass without it.
+
+## 0011-relaykit-responses-text-parts
+
+The pinned Chat-to-Responses stream opens a message with empty content, then
+emits text deltas without opening a content part. OpenAI Python 2.6.1 raises
+`IndexError` while aggregating this stream. Emit `response.content_part.added`
+before the first text delta and `response.content_part.done` after text completion.
+The shared event DTO accepts both output-text and reasoning-summary parts;
+IDs, indices, sequence numbers, annotations and reasoning events are preserved.
+
+The patch includes lifecycle regressions for text and text after reasoning,
+and updates only the corresponding stream golden events. Run the independent
+RelayKit tests/vet and `bash scripts/check.sh` in a fresh overlay. Run
+`scripts/acceptance.sh` with both SDK interpreters enabled to check the actual
+console/core/mock stream and final SDK aggregation. Remove the patch when a
+replacement pinned snapshot emits these content-part events and the library
+and actual SDK regressions pass without it. Original vendored bytes stay frozen.
+
+## 0012-adapter-raw-response
+
+Trusted protocol adapters install a context-only raw response callback. The original
+Handler invokes it before legacy Stream/Aggregate and their read-ahead stats reader;
+public headers and JSON cannot enable it. Original Chat/no-bridge requests retain
+the old path. The adapter enforces raw 8 MiB/frame and 32 MiB/stream limits, validates
+terminal evidence and read errors before success, and closes/cancels on failure.
+A bounded stats observer retains best-effort existing metrics without hiding errors.
+AggregateValidated reuses aggregation after validation, preserving partial cumulative
+usage (including zero), empty argument strings and truncated raw Responses arguments.
+It does not repair generated JSON. Normal Aggregate is unchanged.
+
+Regressions live in extensions/internal/server/protocol_raw_test.go and exercise the
+real Handler with synthetic transports. Run fresh core test/vet/race, the full check
+script and both pinned SDKs through newly built isolated acceptance images. Remove
+this patch only when the frozen Handler offers an equivalent trusted raw contract
+and the real-boundary regressions pass without it.
+
+## 0013-relaykit-image-detail
+
+Preserve sibling Responses input_image.detail when image_url is a string, using the
+representable Chat {url, detail} shape. Host admission accepts only low/high/auto.
+The real Handler regression checks actual outgoing payloads and rejects invalid
+values before transport. Run nested RelayKit test/vet and the isolated gateway media
+observations. Remove only when a replacement pinned snapshot preserves this field
+and these regressions pass without the patch. Original vendor bytes stay frozen.

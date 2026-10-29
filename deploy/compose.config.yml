@@ -1,0 +1,10 @@
+# Optional: docker compose -f docker-compose.yml -f deploy/compose.config.yml up -d
+services:
+  core:
+    volumes:
+      - type: bind
+        source: ./runtime/wb2api/config.json
+        target: /app/config.json
+        read_only: true
+        bind:
+          create_host_path: false

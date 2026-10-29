@@ -1,0 +1,3620 @@
+{
+  "date": "2026-10-11",
+  "core_source_commit": "5a6db9a0d6d406b5a2b325a67d3c382f2b8738a7",
+  "core_image": "sha256:16311106930b4cd81f5cf5b6fb8d41cde0b021567066a96779ca51fc0162a079",
+  "console_image": "sha256:a2919dceb8330b5cf3f66ae71a97d8724c0414878434aa7ab282fee9fa52800b",
+  "all_tested_cn_entries": 16,
+  "untested_global_entries": 0,
+  "temporary_services_stopped": true,
+  "original_credentials_unchanged": true,
+  "models": [
+    {
+      "model_id": "cn:auto",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:hy4-preview",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:hy3",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:space-bunny",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "fail",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {
+            "tool_call": "pass",
+            "tool_result": "fail"
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {
+            "tool_call": "pass",
+            "tool_result": "pass"
+          }
+        }
+      }
+    },
+    {
+      "model_id": "cn:deepseek-v4.1-flash",
+      "source": "prior_same_day",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:glm-5.3",
+      "source": "prior_same_day",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:glm-5.3-flash",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {
+            "inline_text_file": "fail"
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "fail",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {
+            "inline_text_file": "fail"
+          }
+        }
+      }
+    },
+    {
+      "model_id": "cn:glm-5.2",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:glm-5.1",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:glm-5v-turbo",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:kimi-k3-1",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:kimi-k2.8-preview",
+      "source": "prior_same_day",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:kimi-k2.7",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:kimi-k2.6",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "cn:minimax-m3",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "fail",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed": "pass",
+          "confirmation": {
+            "inline_text_file": "pass"
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "fail",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed": "pass",
+          "confirmation": {
+            "inline_text_file": "pass"
+          }
+        }
+      }
+    },
+    {
+      "model_id": "cn:deepseek-v4-pro",
+      "source": "new_full_probe",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed": "pass",
+          "confirmation": {}
+        }
+      }
+    },
+    {
+      "model_id": "global:default-model",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/01-default-model.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "fail",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "inline_text_file": "pass"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "fail",
+                "http_status": 200
+              },
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "fail",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "inline_text_file": "pass"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "fail",
+                "http_status": 200
+              },
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:fast-model",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/02-fast-model.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:balanced-model",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/03-balanced-model.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:primary-model",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/04-primary-model.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:hy4-preview",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/05-hy4-preview.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:gpt-5.6-sol",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/06-gpt-5.6-sol.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:gpt-5.6-terra",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/07-gpt-5.6-terra.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:deep-model",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/08-deep-model.json",
+      "protocols": {
+        "responses": {
+          "text": "error",
+          "stream": "not_run",
+          "history": "not_run",
+          "tool_call": "not_run",
+          "tool_result": "not_run",
+          "image": "not_run",
+          "inline_text_file": "not_run",
+          "strict_schema_conflict": "not_run",
+          "reasoning_observed_any_probe": null,
+          "usage_observed_any_probe": null,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "error",
+                "http_status": 503
+              }
+            ],
+            "stream": [],
+            "history": [],
+            "tool_call": [],
+            "tool_result": [],
+            "image": [],
+            "inline_text_file": [],
+            "strict_schema_conflict": []
+          }
+        },
+        "anthropic": {
+          "text": "error",
+          "stream": "not_run",
+          "history": "not_run",
+          "tool_call": "not_run",
+          "tool_result": "not_run",
+          "image": "not_run",
+          "inline_text_file": "not_run",
+          "strict_schema_conflict": "not_run",
+          "reasoning_observed_any_probe": null,
+          "usage_observed_any_probe": null,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "error",
+                "http_status": 503
+              }
+            ],
+            "stream": [],
+            "history": [],
+            "tool_call": [],
+            "tool_result": [],
+            "image": [],
+            "inline_text_file": [],
+            "strict_schema_conflict": []
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:deepseek-v4.1-flash",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/09-deepseek-v4.1-flash.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:gpt-6-astra",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/10-gpt-6-astra.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "error",
+          "history": "pass",
+          "tool_call": "error",
+          "tool_result": "not_run",
+          "image": "error",
+          "inline_text_file": "error",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "stream": "pass",
+            "reasoning_observed": "not_observed",
+            "usage_observed": "pass",
+            "tool_call": "pass",
+            "tool_result": "pass",
+            "image": "pass",
+            "inline_text_file": "error"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "error",
+                "http_status": 502
+              },
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "error",
+                "http_status": 502
+              },
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "error",
+                "http_status": 502
+              },
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "error",
+                "http_status": 502
+              },
+              {
+                "status": "error",
+                "http_status": 502
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "stream": "error",
+            "reasoning_observed": "not_observed",
+            "usage_observed": "not_observed",
+            "tool_call": "error",
+            "image": "pass",
+            "inline_text_file": "pass"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              },
+              {
+                "status": "error",
+                "http_status": 502
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              },
+              {
+                "status": "error",
+                "http_status": 502
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              },
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              },
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      },
+      "targeted_retry_20261011": {
+        "summary": "gemini-astra-retry-20261011/summary.md",
+        "observations": [
+          {
+            "protocol": "responses",
+            "check": "stream",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round1.json"
+          },
+          {
+            "protocol": "responses",
+            "check": "tool_call",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round1.json"
+          },
+          {
+            "protocol": "responses",
+            "check": "tool_result",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round1.json"
+          },
+          {
+            "protocol": "responses",
+            "check": "image",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round1.json"
+          },
+          {
+            "protocol": "responses",
+            "check": "inline_text_file",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round1.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "stream",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round1.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "tool_call",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round1.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "tool_result",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round1.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "image",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round1.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "inline_text_file",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round1.json"
+          },
+          {
+            "protocol": "responses",
+            "check": "stream",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round2.json"
+          },
+          {
+            "protocol": "responses",
+            "check": "tool_call",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round2.json"
+          },
+          {
+            "protocol": "responses",
+            "check": "tool_result",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round2.json"
+          },
+          {
+            "protocol": "responses",
+            "check": "image",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round2.json"
+          },
+          {
+            "protocol": "responses",
+            "check": "inline_text_file",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round2.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "stream",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round2.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "tool_call",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round2.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "tool_result",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round2.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "image",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round2.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "inline_text_file",
+            "status": "pass",
+            "http_status": 200,
+            "report": "gemini-astra-retry-20261011/astra-round2.json"
+          }
+        ]
+      }
+    },
+    {
+      "model_id": "global:hy4-preview-f",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/11-hy4-preview-f.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:hy3",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/12-hy3.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:glm-5.2",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/13-glm-5.2.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "fail",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "image": "fail"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "fail",
+                "http_status": 200
+              },
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "fail",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "image": "fail"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "fail",
+                "http_status": 200
+              },
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:gpt-5.6-luna",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/14-gpt-5.6-luna.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:gpt-5.5",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/15-gpt-5.5.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:gpt-5.4",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/16-gpt-5.4.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:gpt-5.3-codex",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/17-gpt-5.3-codex.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "tool_call": "pass",
+            "tool_result": "pass"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              },
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              },
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "error",
+          "tool_result": "not_run",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "tool_call": "pass",
+            "tool_result": "pass"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "error",
+                "http_status": 503
+              },
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:gemini-3.5-flash",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/18-gemini-3.5-flash.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "error",
+          "tool_result": "not_run",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "tool_call": "error"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "error",
+                "http_status": 502
+              },
+              {
+                "status": "error",
+                "http_status": 502
+              }
+            ],
+            "tool_result": [],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "error",
+          "tool_result": "not_run",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "tool_call": "error"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "error",
+                "http_status": 502
+              },
+              {
+                "status": "error",
+                "http_status": 502
+              }
+            ],
+            "tool_result": [],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      },
+      "targeted_retry_20261011": {
+        "summary": "gemini-astra-retry-20261011/summary.md",
+        "observations": [
+          {
+            "protocol": "responses",
+            "check": "tool_call",
+            "status": "error",
+            "http_status": 502,
+            "report": "gemini-astra-retry-20261011/gemini-round1.json"
+          },
+          {
+            "protocol": "anthropic",
+            "check": "tool_call",
+            "status": "error",
+            "http_status": 502,
+            "report": "gemini-astra-retry-20261011/gemini-round1.json"
+          }
+        ]
+      }
+    },
+    {
+      "model_id": "global:glm-5.3",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/19-glm-5.3.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "fail",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "image": "fail"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "fail",
+                "http_status": 200
+              },
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "fail",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {
+            "image": "fail"
+          },
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "fail",
+                "http_status": 200
+              },
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:kimi-k3",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/20-kimi-k3.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": true,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "model_id": "global:kimi-k2.6",
+      "source": "global_full_probe",
+      "report": "global-models-20261011/21-kimi-k2.6.json",
+      "protocols": {
+        "responses": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "fail",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "fail",
+                "http_status": 200
+              }
+            ]
+          }
+        },
+        "anthropic": {
+          "text": "pass",
+          "stream": "pass",
+          "history": "pass",
+          "tool_call": "pass",
+          "tool_result": "pass",
+          "image": "pass",
+          "inline_text_file": "pass",
+          "strict_schema_conflict": "skipped",
+          "reasoning_observed_any_probe": false,
+          "usage_observed_any_probe": true,
+          "confirmation": {},
+          "observations": {
+            "text": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "stream": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "history": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_call": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "tool_result": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "image": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "inline_text_file": [
+              {
+                "status": "pass",
+                "http_status": 200
+              }
+            ],
+            "strict_schema_conflict": [
+              {
+                "status": "skipped",
+                "http_status": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "untested": [],
+  "evidence_sha256": {
+    "real-model-capabilities-20261011-deepseek.json": "fd0a5922b96c4276b324fbf03884315a8759deb38f78761bb88a5ac38ffaf6a2",
+    "real-model-capabilities-20261011-glm-kimi.json": "f382921b04c0aeb04c73664d80320055bd3627ecb1820e304860612e1b255a13",
+    "real-model-capabilities-20261011-schema.json": "a36bc03f029bb09f25fb78968def3af74bf257ade95ef96844b47b3dce5912da",
+    "all-other-model-capabilities-20261011.json": "1353fec4ade3839a8efd1477b2ff9eeeed490840f24fb02bb770d65afa9e7538",
+    "all-model-deepseek-v4-pro-20261011.json": "a37d1767332e40bcc89ddf74d63a0dd7c9f5e2b175b719007a5c6b69515d8ccb",
+    "all-model-tool-confirmation-20261011.json": "b3cf64297d9fb6eda5d539c55a00f2b32da5c31b8e7266dac751afd6f768101e",
+    "all-model-file-confirmation-20261011.json": "35e08cf136eb4113f5ec2771b0c85873a557de2b79dea4c6e1bd9cea764e8c5a",
+    "global-models-20261011/01-default-model.json": "f66d558bfa75209570b079427421669a525ece14986ae2fef4dfdde35c78eeea",
+    "global-models-20261011/02-fast-model.json": "40194f504d9dbc853752fc5ec1d1581f367cd549edb294abff63f7f38ec1f527",
+    "global-models-20261011/03-balanced-model.json": "53e70adb8a95080ec1c3488f34a415b9561ce6eb45e58b720c32f656735f5921",
+    "global-models-20261011/04-primary-model.json": "2cbda76d0c52923bdd08501f6c33785c76d1a0b332295ab39b2233bccacabe40",
+    "global-models-20261011/05-hy4-preview.json": "c6d7b8f74077d0f7176aa10534f45f420533dfd2edea4408e464d1fd18bd3cc9",
+    "global-models-20261011/06-gpt-5.6-sol.json": "f3ecba4f5913d53d6ee9335466971a8ef182edeb89e7a450a83d88d391a95d4b",
+    "global-models-20261011/07-gpt-5.6-terra.json": "45437737d844485eb6638627db37ec4b77caaa761f3b2e8810d64f99951d1c5b",
+    "global-models-20261011/08-deep-model.json": "8360b2a33c0a9cfa6a32026e9ae93c724ceb38796acac15cf18377d650c82f1e",
+    "global-models-20261011/09-deepseek-v4.1-flash.json": "13b71ae545154c24d7c683e3c16a4fcdd55d692f47d0eca89a072a7a575d451e",
+    "global-models-20261011/10-gpt-6-astra.json": "eedb0f65ff86bb855e83c4cae110480a7d1ddeb60e2e60a7624762aefbd7d7c2",
+    "global-models-20261011/11-hy4-preview-f.json": "1e3bd0942ed16fef5911a3a6df55ddb21d77d93bae7b0252d3d464b82f24be6d",
+    "global-models-20261011/12-hy3.json": "cdaf47269cdede3f8da5a00be8fba14a4482933e57ef3431627799181fe2ff24",
+    "global-models-20261011/13-glm-5.2.json": "ddf3cf92ad7c8d7aa15c7cdb5fc3c4195ae237d51cda1cf4436ecb8641ddb584",
+    "global-models-20261011/14-gpt-5.6-luna.json": "f4fed7d9c68b3d57973f9fe46a790e58a0dadece828c6849d3542c74a3c9554c",
+    "global-models-20261011/15-gpt-5.5.json": "c8014018718859593604c357ad6818bb385d0c23fd63b72be0d64a70b8ff33ca",
+    "global-models-20261011/16-gpt-5.4.json": "03fe5743a80113a685c9311f8a3102dc4f711d78f81e82884da12a401aeb63e0",
+    "global-models-20261011/17-gpt-5.3-codex.json": "6f6c5abf666036202dda422d0ced198cd8ad765c6a849c15acee0918f3d38b69",
+    "global-models-20261011/18-gemini-3.5-flash.json": "cf3d0406277374885964c77cb75e04aa5e00155116e04aea44dda0dac725eb59",
+    "global-models-20261011/19-glm-5.3.json": "10d5ef9b81595a11d693c660fa4b5014652fd1d66c21b0dcee8ef255b7f5ea5a",
+    "global-models-20261011/20-kimi-k3.json": "ce125ce27593eab5977bc95b1384036a997d0e6f41d76b218258b4a0a32c804d",
+    "global-models-20261011/21-kimi-k2.6.json": "8dc855f644342921bb4d6e64fefcf57e625dd144413be0bd76c6c949fb9c5fe6",
+    "global-models-20261011/chat-controls.json": "dd1cc98ac5c309b32b5345edca093b4455fb87f1f5c4631ef12bdec4869bdd5b",
+    "global-models-20261011/confirm-astra.json": "f1ce5e53e468242a5369466313214edbb83d38f8dbdfdfabc9ef37b63e8e69c1",
+    "global-models-20261011/confirm-file.json": "cce1bcac433cd4ae0161b58c2c3f858d866ae3f8825b0c069b3d0a0238460e66",
+    "global-models-20261011/confirm-images.json": "5ccb4f2bf00c15ded88fcde5471577cb41fa1c929349d954add09b6a0a459af8",
+    "global-models-20261011/confirm-tools.json": "d7135dc144d3d95c7098fd85a6f16e32cde6f653b9969a787d11b186c9e7f1da",
+    "global-models-20261011/upstream-warnings.txt": "4b1a8e93e0b382127115901391c3a6f17e2dbd06115d8d204a49d38fb54c588c",
+    "gemini-astra-retry-20261011/astra-round1.json": "c805fd2ada767b5129869c79695d9724f3d4e257d32dc128d019b3ba247ae3e0",
+    "gemini-astra-retry-20261011/astra-round1.md": "7a7bb596f20facf626cae763541f7c0d23f25554897f62abcc2da4d17433889f",
+    "gemini-astra-retry-20261011/astra-round2.json": "f6597a6396d6e09a4c4d926e92c11755e7f612cfc2645057455c082ed445ae29",
+    "gemini-astra-retry-20261011/astra-round2.md": "ddef2981319075d7cdf3fb35806b86102aca985e80d3ad315dcca54bd056b710",
+    "gemini-astra-retry-20261011/capture-metadata.json": "14c871b86f04990a13aab77bcd8b9987495d26c55728cc50e438c219d9085f5d",
+    "gemini-astra-retry-20261011/gemini-controls.json": "e23f80804ab57a0865446ba05df12eca92d0cbccf2b8d79de0da5c085611e99f",
+    "gemini-astra-retry-20261011/gemini-raw-redacted.sse": "2870fc7fff92473305d796bccaad760a4052c17a1347c085b8ee1732f7749bf0",
+    "gemini-astra-retry-20261011/gemini-round1.json": "d54eab2aaac2859c64e9f286d7f2fc17bc4c2995c53276d69a50b13b446617e3",
+    "gemini-astra-retry-20261011/gemini-round1.md": "5feaee6eedb938e66b8d00560bda282fe240ff50c3aeaaa3b220e062254b0ff4",
+    "gemini-astra-retry-20261011/raw-replay.txt": "6ea1f4292429c917c9d9c2ac1333fbf8aeb7df8552e17c3fd06fafb9084250b5",
+    "gemini-astra-retry-20261011/raw_replay_test.go": "5710776600760dbd655d07d9d6faf0f73b525ec2b7d0a038c1354ba39497d49b",
+    "gemini-astra-retry-20261011/redacted-replay.txt": "9c3e4b407eec1ec278d43a33cd4e60df1060acfd35bd56b67049fc7cbd821d49",
+    "gemini-astra-retry-20261011/summary.md": "cee9e3d9f4bc887085c39c6b3f38904b0a05cc519c8d1cb8691e51f19f71073d"
+  },
+  "attempted_global_entries": 21,
+  "attempted_all_entries": 37,
+  "global_unavailable_entries": [
+    "global:deep-model"
+  ],
+  "global_primary_probe_requests": 299,
+  "global_confirmation_requests": 21,
+  "global_legacy_chat_control_requests": 2,
+  "global_total_client_requests": 322,
+  "global_matrix_record_status_counts": {
+    "pass": 318,
+    "not_observed": 25,
+    "fail": 26,
+    "skipped": 22,
+    "error": 10
+  },
+  "global_services_stopped": true,
+  "global_original_credentials_unchanged": true,
+  "global_completed_with_existing_generic_script": true,
+  "cn_expansion_effective_matrix_requests_including_prior": 240,
+  "cn_expansion_actual_requests_including_interrupted_duplicates_and_confirmations": 205,
+  "cn_expansion_new_models": 13,
+  "cn_expansion_effective_requests": 195,
+  "cn_expansion_confirmation_requests": 8,
+  "cn_expansion_interrupted_duplicate_requests": 2,
+  "cn_matrix_record_status_counts": {
+    "pass": 271,
+    "fail": 20,
+    "skipped": 16,
+    "not_observed": 13
+  },
+  "targeted_retry_20261011": {
+    "gateway_requests": 25,
+    "astra_passed_requests": 20,
+    "gemini_converted_tool_requests_502": 4,
+    "gemini_chat_stream_tool_request_200": 1,
+    "services_stopped": true,
+    "original_credentials_unchanged": true,
+    "production_code_changed": false,
+    "historical_observations_preserved": true,
+    "summary": "gemini-astra-retry-20261011/summary.md"
+  }
+}
