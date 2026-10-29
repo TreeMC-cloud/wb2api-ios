@@ -49,8 +49,9 @@ jobs:
         working-directory: ios
         run: |
           set -euo pipefail
-          # Pillow ships with the runner's python3; install only if missing.
-          python3 -c 'import PIL' 2>/dev/null || python3 -m pip install --quiet pillow
+          # The runner's python3 already ships Pillow; do not pip install into
+          # the system interpreter (PEP 668 on macOS runners rejects it).
+          python3 -c 'import PIL; print("Pillow", PIL.__version__)'
           sh tools/verify_project.sh
 
       - name: Build (no code signing)
